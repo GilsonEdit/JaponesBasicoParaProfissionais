@@ -11,8 +11,12 @@ Este repositório faz parte do portifólio de Gilson Junio Sales Andrade, possui
 
  Acesse a versão final lançada por "Za Toransulators" através de <link>
 
+# Créditos
 
-# Portifolio Developer:
+# Developer:
 <b>· Gilson Junio Sales Andrade</b>
 <br>- GitHub: https://github.com/GilsonEdit
 <br>- LinkedIn: https://www.linkedin.com/in/gilsonedit/
+# Tradução:
+<b> · Ariane de Araújo Cunha
+<br>- Lattes:
