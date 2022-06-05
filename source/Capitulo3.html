@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lição 3</title>
+		<style>
+			table{
+				border-collapse: collapse;
+				border: 1px solid #dddddd;
+				margin: 10px;
+				}
+			td,th{
+				border-collapse: collapse;
+				border: 1px solid black;
+				padding: 5px;}
+			.romaji{
+				font-weight: bold;
+				font-style: italic;}
+			article{margin: 10%;}
+			h1{text-decoration:underline;}
+			.dialogue_headline{font-weight: bold;}
+			/* Grid
+			–––––––––––––––––––––––––––––––––––––––––––––––––– */
+			.container {
+			  position: relative;
+			  width: 100%;
+			  max-width: 960px;
+			  margin: 0 auto;
+			  padding: 0 20px;
+			  box-sizing: border-box; }
+			.column,
+			.columns {
+			  width: 100%;
+			  float: left;
+			  box-sizing: border-box; }
+
+			/* For devices larger than 400px */
+			@media (min-width: 400px) {
+			  .container {
+				width: 85%;
+				padding: 0; }
+			}
+
+			/* For devices larger than 550px */
+			@media (min-width: 550px) {
+			  .container {
+				width: 80%; }
+			  .column,
+			  .columns {
+				margin-left: 4%; }
+			  .column:first-child,
+			  .columns:first-child {
+				margin-left: 0; }
+
+			  .one.column,
+			  .one.columns                    { width: 4.66666666667%; }
+			  .two.columns                    { width: 13.3333333333%; }
+			  .three.columns                  { width: 22%;            }
+			  .four.columns                   { width: 30.6666666667%; }
+			  .five.columns                   { width: 39.3333333333%; }
+			  .six.columns                    { width: 48%;            }
+			  .seven.columns                  { width: 56.6666666667%; }
+			  .eight.columns                  { width: 65.3333333333%; }
+			  .nine.columns                   { width: 74.0%;          }
+			  .ten.columns                    { width: 82.6666666667%; }
+			  .eleven.columns                 { width: 91.3333333333%; }
+			  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+			  .one-third.column               { width: 30.6666666667%; }
+			  .two-thirds.column              { width: 65.3333333333%; }
+
+			  .one-half.column                { width: 48%; }
+			  /* Offsets */
+			  .offset-by-one.column,
+			  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+			  .offset-by-two.column,
+			  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+			  .offset-by-three.column,
+			  .offset-by-three.columns        { margin-left: 26%;            }
+			  .offset-by-four.column,
+			  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+			  .offset-by-five.column,
+			  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+			  .offset-by-six.column,
+			  .offset-by-six.columns          { margin-left: 52%;            }
+			  .offset-by-seven.column,
+			  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+			  .offset-by-eight.column,
+			  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+			  .offset-by-nine.column,
+			  .offset-by-nine.columns         { margin-left: 78.0%;          }
+			  .offset-by-ten.column,
+			  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+			  .offset-by-eleven.column,
+			  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+			  .offset-by-one-third.column,
+			  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+			  .offset-by-two-thirds.column,
+			  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+			  .offset-by-one-half.column,
+			  .offset-by-one-half.columns     { margin-left: 52%; }
+
+			}
+
+
+			/* Base Styles
+			–––––––––––––––––––––––––––––––––––––––––––––––––– */
+			/* NOTE
+			html is set to 62.5% so that all the REM measurements throughout Skeleton
+			are based on 10px sizing. So basically 1.5rem = 15px :) */
+			html {
+			  font-size: 62.5%; }
+			body {
+			  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+			  line-height: 1.6;
+			  font-weight: 400;
+			  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			  color: #222; }
+
+
+			/* Typography
+			–––––––––––––––––––––––––––––––––––––––––––––––––– */
+			h1, h2, h3, h4, h5, h6 {
+			  margin-top: 0;
+			  margin-bottom: 2rem;
+			  font-weight: 300; }
+			h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+			h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+			h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+			h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+			h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+			h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+			/* Larger than phablet */
+			@media (min-width: 550px) {
+			  h1 { font-size: 5.0rem; }
+			  h2 { font-size: 4.2rem; }
+			  h3 { font-size: 3.6rem; }
+			  h4 { font-size: 3.0rem; }
+			  h5 { font-size: 2.4rem; }
+			  h6 { font-size: 1.5rem; }
+			}
+
+			p {
+			  margin-top: 0; }
+		</style>		
+	</head>
+	<body>
+		<article>
+			<h1>Lição 3: Estabelecendo-se</h1>
+			<h1>Diálogo 1</h1>
+			<p>Michael está verificando a lista de apartamento.</p>
+			<p>Honda:  いいアパート、ありますか。</p>
+			<p>Michael:  すく少ないですねえ。</p>
+			<p>Honda:  このアパートはどうですか。</p>
+			<p>Michael:そうですねえ。ちょっと高(たか)くないですか 。</p>	
+<!-----
+
+Existe bons apartamentos
+Ii apaato, arimasu ka.?
+Muito pouco.
+Sukunai desu nee.
+Que tal este apartamento? 
+Kono apaato wa dou desu ka?
+Sou desu nee. Chotto takaku naidesu ka.
+Vamos ver. Não é um pouco caro? 
+------->
+<!------------------------VOCABULARIO---------------------->
+			<h1>Vocabulário</h1>
+			<table>
+				<!--Header-->
+				<tr>
+					<td>Word</td>
+					<td>Hiragana</td>
+					<td>Romaji</td>
+					<td>Meaning</td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<!--Row 2-->
+				<tr>
+					<!--Word--><td>	アパート</td>
+					<!--Hiragana--><td>あぱあと	</td>
+					<!--Romaji--><td class="romaji">apaato</td>
+					<!--Translation--><td>apartamento </td>
+				</tr>
+				<!--Row 3-->
+				<tr>
+					<!--Word--><td>	</td>
+					<!--Hiragana--><td>あります</td>
+					<!--Romaji--><td class="romaji">arimasu</td>
+					<!--Translation--><td> existe/existem, existe</td>
+				</tr>
+				<!--Row 4-->
+				<tr>
+					<!--Word--><td>	少ない</td>
+					<!--Hiragana--><td>すくない	</td>
+					<!--Romaji--><td class="romaji">sukunai</td>
+					<!--Translation--><td> ser poucos, são poucos</td>
+				</tr>
+				<!--Row 5-->
+				<tr>
+					<!--Word--><td>	</td>
+					<!--Hiragana--><td>どう</td>
+					<!--Romaji--><td class="romaji">dou</td>
+					<!--Translation--><td>como as </td>
+				</tr>
+				<!--Row 6-->
+				<tr>
+					<!--Word--><td>	</td>
+					<!--Hiragana--><td>そうですねえ</td>
+					<!--Romaji--><td class="romaji">sou desu nee</td>
+					<!--Translation--><td>Deixe-me ver, estou pesando </td>
+				</tr>
+				<!--Row 6-->
+				<tr>
+					<!--Word--><td>	高い</td>
+					<!--Hiragana--><td>たかい</td>
+					<!--Romaji--><td class="romaji">takai</td>
+					<!--Translation--><td>caro</td>
+				</tr>
+				<!--Row 6-->
+				<tr>
+					<!--Word--><td>	高くない</td>
+					<!--Hiragana--><td>たかくない</td>
+					<!--Romaji--><td class="romaji">takakunai</td>
+					<!--Translation--><td>não é caro</td>
+				</tr>				<!--Row 6-->
+				<tr>
+					<!--Word--><td>	マンション</td>
+					<!--Hiragana--><td>まんしょん	</td>
+					<!--Romaji--><td class="romaji">＋manshon</td>
+					<!--Translation--><td>condomínio </td>
+				</tr>				<!--Row 6-->
+				<tr>
+					<!--Word--><td>	家	</td>
+					<!--Hiragana--><td>いえ	</td>
+					<!--Romaji--><td class="romaji">＋ie</td>
+					<!--Translation--><td>casa, lar </td>
+				</tr>				<!--Row 6-->
+				<tr>
+					<!--Word--><td>	部屋	</td>
+					<!--Hiragana--><td>へや	</td>
+					<!--Romaji--><td class="romaji">＋heya</td>
+					<!--Translation--><td>quarto </td>
+				</tr>				<!--Row 6-->
+				<tr>
+					<!--Word--><td>	</td>
+					<!--Hiragana--><td>いかが</td>
+					<!--Romaji--><td class="romaji">＋ikaga</td>
+					<!--Translation--><td>como (educado) </td>
+				</tr>
+				<tr>
+					<!--Word--><td>	多い</td>
+					<!--Hiragana--><td>おおい</td>
+					<!--Romaji--><td class="romaji">＋ooi</td>
+					<!--Translation--><td>	ser muito, há muito </td>
+				</tr>
+				<tr>
+					<!--Word--><td>	安い	</td>
+					<!--Hiragana--><td>やすい	</td>
+					<!--Romaji--><td class="romaji">＋yasui</td>
+					<!--Translation--><td> barato</td>
+				</tr>									
+				<tr>
+					<!--Word--><td>	大きい	</td>
+					<!--Hiragana--><td>おおきい	</td>
+					<!--Romaji--><td class="romaji">＋ookii</td>
+					<!--Translation--><td>ampla, grande </td>
+				</tr>
+				<tr>
+					<!--Word--><td>	小さい	</td>
+					<!--Hiragana--><td>ちいさい	</td>
+					<!--Romaji--><td class="romaji">＋chiisai<i class="romaji"></i></td>
+					<!--Translation--><td>pequeno </td>
+				</tr>
+				<tr>
+					<!--Word--><td>新しい		</td>
+					<!--Hiragana--><td>あたらしい	</td>
+					<!--Romaji--><td class="romaji">＋atarashii</td>
+					<!--Translation--><td>novo </td>
+				</tr>
+				<tr>
+					<!--Word--><td>	古い	</td>
+					<!--Hiragana--><td>ふるい	</td>
+					<!--Romaji--><td class="romaji">＋furui</td>
+					<!--Translation--><td>velho </td>
+				</tr>
+			</table>
+<!--------------------------------------NOTAS DE GRAMÁTICA----------------------------------->
+			<h1>Notas de Gramática</h1>
+			<h1>3-1-1 Sentenças Adjetivas</h1>
+			<p>Todos os adjetivos em Japonês terminam em <i class="romaji">-i</i> (Não Passado), <i class="romaji">-katta</i> (Passado),e <i class="romaji">-ku</i>. </p>
+			<table>
+				<tr>
+					<td class="romaji">takai</td>
+					<td>caro</td>
+				</tr>
+				<tr>
+					<td class="romaji">takakunai</td>
+					<td>não é caro</td>
+				</tr>
+			</table>
+			<p>Para tornar a forma do Passado, altere <i class="romaji">-i</i> para <i class="romaji">-katta</i>.Para forma negativa, mude <i class="romaji">nai</i> para <i class="romaji">nakatta</i>.</p>
+			<table>
+				<tr>
+<!--Romaji-->		<td class="romaji">takakatta</td>
+<!--Translation-->	<td class="romaji">era caro</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">takaku nakatta</td>
+<!--Translation-->	<td class="romaji">não era caro</td>
+				</tr>
+			</table>
+			<p>Para fazer uma frase formal de sentença adjetiva, adicione <i class="romaji">desu</i>.</p>
+			<table>
+				<tr>
+<!--Romaji-->		<td class="romaji">Takai desu.</td>
+<!--Translation-->	<td>É caro</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">Takaku nai desu</td>
+<!--Translation-->	<td>Não é caro. </td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">Takakatta desu.  </td>
+<!--Translation-->	<td>Foi caro.</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">Takaku nakatta desu. </td>
+<!--Translation-->	<td>Não era caro.</td>
+				</tr>
+			</table>
+			<p>Nas lições 1 e 2, sentenças verbais e sentenças substativas foram introduzidas. Com as sentenças adjetivas apresentadas nesta lição, você já viu todos os três tipos de sentenças japonesas. O gráfico abaixo mostra os formulários que foram introduzidas até o momento.</p>
+			<h2>Tabela 4. Exemplos de tipos de verbo, substantive e frases adjetivas e negativas não passado em Japonês.</h2>
+			<table>
+				<tr>
+					<td></td>
+					<td>Não passado-Afirmativo</td>
+					<td>Não passado-Negativo</td>
+				</tr>
+				<tr>
+					<td>Sentença Verbal</td>
+					<td class="romaji">Wakarimasu</td>
+					<td class="romaji">Wakarimasen</td>
+				</tr>
+				<tr>
+					<td>Sentença Substantiva</td>
+					<td class="romaji">Nihon desu.</td>
+					<td class="romaji">Nihon ja nai desu</td>
+				</tr>
+				<tr>
+					<td>Sentença Adjetiva</td>
+					<td class="romaji">Takai desu.</td>
+					<td class="romaji">Takaku nai desu.</td>
+				</tr>
+			</table>
+			<h2>Tabela 5. Tipos passados afirmativos e negativos de verbo, substantivo e ajetivos em Japonês.</h2>
+			<table>
+				<tr>
+					<td>Passado-Afirmativo</td>
+					<td>Passado-Negativo</td>
+					<td>Passado-Afirmativo</td>
+				</tr>
+				<tr>
+					<td>Sentença Verbal</td>
+					<td class="romaji">Wakarimashita.</td>
+					<td class="romaji">Wakarimasen deshita.</td>
+				</tr>						
+			</table>
+			<table>
+				<tr>
+					<td>Passado-Afirmativo</td>
+					<td>Passado-Negativo</td>
+					<td>Passado-Afirmativo</td>
+				</tr>
+				<tr>
+					<td>Sentença Substantiva</td>
+					<td class="romaji">Nihon deshita.</td>
+					<td class="romaji">Nihon ja nakatta desu.</td>
+				</tr>
+				<tr>
+					<td>Sentença Adjetiva</td>
+					<td class="romaji">Takakatta desu.</td>
+					<td class="romaji">Takaku nakatta desu.</td>
+				</tr>
+			</table>
+			<p>O adjetivo ii possui formas especias. Esta é a única exceção em toda a classe de adjetivos.</p>
+			<table>
+				<tr>
+<!--Romaji-->		<td class="romaji">Ii desu</td>
+<!--Translation-->	<td>É bom</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">Yoku nai desu</td>
+<!--Translation-->	<td>Não é bom</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">Yokatta desu</td>
+<!--Translation-->	<td>Foi bom</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">Yoku nakatta desu</td>
+<!--Translation-->	<td>Não foi bom.</td>
+				</tr>
+			</table>
+			<p><i class="romaji">Yoku</i> é um dos advérbios mais comumente usados e já foi introduzido na Lição 1 como na <i class="romaji">yoku wakarimasu</i>, <i class="romaji">yoku tabemasu</i>, etc. <i class="romaji">Yokatta desu nee</i> é uma resposta comum às boas notícias.</p>
+					
+			<h1>3-1-2 Adjetivo + Substantivos</h1>
+			<p>Na lição 2, você viu duas maneiras de transformar um substantivo em um sintagma nominal. <br>Uma maneira é modificar um substantivo por outro, como na sequência /X no Y/ na frase <i class="romaji">Amerika no kaisha</i> ‘empresa Americana.’ <br>Outro exemplo é o grupo <i class="romaji">kono-sono-ano-dono</i> que precede um substantivo, como em ano <i class="romaji">kaisha</i> ‘aquela empresa’. <br>Essas duas formas podem ser combinadas como em <i class="romaji">kono Amerika no kaisha</i> ‘esta empresa Americana.’<br>Os adjetivos podem modificar diretamente um substantivo para formar um sintagma nominal (não há necessidade da partícula não).</p>
+			<table>
+				<tr>
+<!--Romaji-->		<td class="romaji">takai keitai</td>
+<!--Translation-->	<td>celular caro</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">takaku nai keitai</td>
+<!--Translation-->	<td>celular que não é caro</td>
+				</tr>
+			</table>
+			<p>	É possível combinar mais de um adjetivo ou outros elementos modificadores para estender um substantivo nominal.</p>
+			<table>
+				<tr>
+<!--Romaji-->		<td class="romaji">chiisai takai keitai</td>
+<!--Translation-->	<td>	celular, pequeno e caro</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">kono Amerika no chiisai takai keitai</td>
+<!--Translation-->	<td>este pequeno, caro celular Americano</td>
+				</tr>
+			</table>
+			<p>	Observe que todos os elementos modificadores ocorrem antes do substantivo principal, e que a partícula no deve ser anexada a um modificador de substantive onde quer que ocorra. A ordem de modificação dos elementos é bastante livre, ao contrário do inglês, onde existem certas restrições.</p>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+				<tr>
+<!--Romaji-->		<td class="romaji">chiisai takai kono Amerika no keitai</td>
+<!--Translation-->	<td>este pequeno, celular caro Americano</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">kono watashi no keitai</td>
+<!--Translation-->	<td>este meu celular</td>
+				</tr>
+				<tr>
+<!--Romaji-->		<td class="romaji">watashi no kono keitai</td>
+<!--Translation-->	<td>este meu celular</td>
+				</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>					
+			<h1>3-1-3 arimasu	‘há X’</h1>
+			
+			<p>O verbo arimasu significa ‘existe’ ou ‘eu tenho’. Indica existência inanimada, como objetos, plantas, idéias, eventos, etc. Um verbo diferente é usado para pessoas e animais e será introduzido mais tarde. Existem duas formas negativas para arimasu: arimasen e nai desu. Este ultimo é menos formal. Como vimos até agora, nai desu faz partes das formas negativas de substantivos e sentenças adjetivas. Arimasen pode substituir nai desu nessas formas e soa um pouco mais elegante.</p>			
+			<p><i class="romaji">Sumaho ja nai desu.	→ Sumaho ja arimasen.</i>	Não é um smartphone.</p>
+			<p><i class="romaji">Takaku nai desu.	→ Takaku arimasen.</i>	Não é caro not.</p>
+
+			<p>Simillarmente, a forma Passado <i class="romaji">arimasen deshita</i> pode substituir <i class="romaji">nakatta desu.</i></p>
+			<p><i class="romaji">Sumaho ja nakatta desu. → Sumaho ja arimasen deshita. </i>Não era um smartphone.</p>
+			<p><i class="romaji">Takaku nakatta desu.	→ Takaku arimasen deshita.</i>	Não era caro.</p>
+
+			<p>O gráfico abaixo mostra todos os formulários incluindo essas alternativas</p>.
+			<h1>Tabela 1. Todas as formas anteriores de "<i class="romaji">arimasen</i>" – afirmativas e negativas – como uma sentença verbal, sentença nominal e sentença adjetiva.</h1>
+			<table>
+			<tr>
+				<td></td>
+				<td>Afirmativa – Não passado</td>
+				<td>Negativo – Não passado</td>
+			</tr> 
+			<tr>
+				<td>Sentença Verbal</td>
+				<td class="romaji">Arimasu.</td>
+				<td class="romaji">Nai desu. Arimasen.</td>
+			</tr>
+			<tr>
+				<td>Sentença Substantiva</td>
+				<td class="romaji">Nihon desu.</td>
+				<td class="romaji">Nihon ja nai desu | Nihon ja arimasen</td>
+			</tr>
+			<tr>
+				<td>Sentença Adjetiva</td>
+				<td class="romaji">Takai desu.</td>
+				<td class="romaji">Takaku nai desu | Takaku arimasen.</td>
+			</tr>
+			</table>
+			
+			<h1>Tabela 2</h1>
+			<table>
+			<tr>
+				<td></td>
+				<td>Afirmativo - Passado</td>
+				<td>Negativo - Passado</td>
+			</tr> 
+			<tr>
+				<td>Sentença Verbal</td>
+				<td class="romaji">Arimashita..</td>
+				<td class="romaji">Nai desu. Arimasen.</td>
+			</tr>
+			<tr>
+				<td>Sentença Substantiva</td>
+				<td class="romaji">Nihon deshita..</td>
+				<td class="romaji">Nihon ja nakatta desu | Nihon ja arimasen deshita.</td>
+			</tr>
+			<tr>
+				<td>Sentença Adjetiva</td>
+				<td class="romaji">Takai desu.</td>
+				<td class="romaji">Takakatta desu | Takaku nakatta desu | Takaku arimasen deshita</td>
+			</tr>
+			</table>
+			<p>Observe a diferença entre as seguintes frases.</p>
+			<table>
+			<tr>
+				<td class="romaji">Kaisha ja arimasen | Kaisha ja nai desu</td>
+				<td>Não é uma companhia(Identidade)</td>
+			</tr>
+			<tr>
+				<td class="romaji">Kaisha wa arimasen | Kaisha wa nai desu</td>
+				<td>Não há companhia(Existência)</td>
+			</tr>
+			</table>
+			<h1>Treinos e Exercícios</h1>
+			<p>A. Ouça o áudio. Após as duas primeiras troas de modelos, responda cada sugestão.<!--たか--></p>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão</td><!--Cue-->
+				<td>Resposta</td><!---Response-->
+			</tr>
+			<tr>
+				<td>高いですか。</td>
+				<td>いえ、<ruby>安<rt>やす</rt></ruby>いですよ。</td>
+				<td></td>
+				
+			</tr>
+			<tr>
+				<td>Romaji</td>
+				<td class="romaji">Takai desu ka</td>
+				<td class="romaji">Iie, yasui desu yo.</td>
+			</tr>
+			<tr>
+				<td>Tradução</td>
+				<td>É caro?</td>
+				<td>Não, é barato, garanto-lhe.</td>
+			</tr>	
+			</table>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>安いですか。	</td><!--Cue_1-->
+				<td>いえ、高いでよ。	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td class="romaji">Yasui desu ka.	</td><!--Cue_1_Romaji-->
+				<td class="romaji">Iie, takai desu yo.	</td><!--Response_1_Romaji-->
+			</tr>
+			<tr>
+				<td>Isso é barato?	</td><!--Cue_1_Translation-->
+				<td>Não, é caro, lhe garanto.	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+
+			<h3>B.</h3> 
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>いいですか。	</td><!--Cue_1-->
+				<td>いいえ、あまりよくないです。	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td class="romaji">Ii desu ka.	</td><!--Cue_1_Romaji-->
+				<td class="romaji">Iie, amari yoku desu.	</td><!--Response_1_Romaji-->
+			</tr>
+			<tr>
+				<td>Está tudo certo?</td><!--Cue_1_Translation-->
+				<td>Não, não é muito bom.</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão</td><!--Cue_Title-->
+				<td>Resposta</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>安いですか。	</td><!--Cue_1-->
+				<td>いいえ、あまり安くないです。	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td class="romaji">Yasui desu ka.	</td><!--Cue_1_Romaji-->
+				<td class="romaji">Iie, amari yasuku desu.	</td><!--Response_1_Romaji-->
+			</tr>
+			<tr>
+				<td>Isso é barato?	</td><!--Cue_1_Translation-->
+				<td>Não, não é muito barato.	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+			
+			<h3>C</h3>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>アパートですか。	</td><!--Cue_1-->
+				<td>いいえ、アパート<!---[faltaJA]-->ありません。</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td class="romaji">Apaato desu ka.	</td><!--Cue_1_Romaji-->
+				<td class="romaji">Iie, apaato ja arimasen.	</td><!--Response_1_Romaji-->
+			</tr>
+			<tr>
+				<td>É um apartamento?	</td><!--Cue_1_Translation-->
+				<td>Não, não é um apartamento.	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>安いですか。	</td><!--Cue_1-->
+				<td>いいえ、安くありません。	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td class="romaji">Yasui desu ka.	</td><!--Cue_1_Romaji-->
+				<td class="romaji">Iie, yasuku arimasen.	</td><!--Response_1_Romaji-->
+			</tr>
+			<tr>
+				<td>Isso é barato?	</td><!--Cue_1_Translation-->
+				<td>Não, não é barato.</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+			<h3>D.</h3>  
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta 	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>あれ、高かったですか。	</td><!--Cue_1-->
+				<td>いえ、高くなかったですよ。	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td class="romaji">Are, takakatta desu ka.	</td><!--Cue_1_Romaji-->
+				<td class="romaji">Ie, takaku nakatta desu yo. 	</td><!--Response_1_Romaji-->
+			</tr>
+			<tr>
+				<td>Isso foi caro?	</td><!--Cue_1_Translation-->
+				<td>Não, não foi.	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>あれ、新しかったですか。	</td><!--Cue_1-->
+				<td>いえ、新しくなかったですよ。	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td class="romaji">Are, atarashikatta desu ka? 	</td><!--Cue_1_Romaji-->
+				<td class="romaji">Ie, atarashiku nakatta desu yo.	</td><!--Response_1_Romaji-->
+			</tr>
+			<tr>
+				<td>Isso era novo?	</td><!--Cue_1_Translation-->
+				<td>Não, não era novo.</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+			<h1>E</h1>. 
+			<h2>Diga em Japonês.</h2>
+			<b>Sua opinião sobre um apartamento foi solicitada a você.</b>
+				<p>1. Deixe-me ver…não é grande?</p>
+				<p>2. É um pouco velho. Não há novos apartamentos?</p>
+				<p>3. Não é muito caro, mas me pergunto se não pode pequeno.</p>
+				<p>4. Eu vi ontem. Foi agradável.</p>
+				<p>5. São muitos apartamentos pequenos, mas os grandes são escassos, não são?</p>
+				<p>F. Aja em Japonês com um parceiro.</p>
+				<p>A Sra. Honda está verificando a lista de apartamentos. Pergunte há algo bom.</p>
+				<p>1. A Sra. Honda mudou-se recentemente para um novo apartamento. Descubra como ela gosta.</p>
+				<p>2. Em uma loja, você viu uma bolsa bonita, mas é pequena. Chame a atenção de um balconista e pergunte se há um grande problema.</p>
+				<p>3. Um colega acaba de dar uma ótima notícia para você. Responder.</p>
+				<p>4. A Sra. Honda foi ver um apartamento ontem. Pergunte a ela a) como era, b) se era bom, c) se não era antigo.</p>
+				<p>5. Você foi questionado sobre seu a) apartamento, b) escola, c) companhia. Descrever.</p>
+			<h1>Diálogo 2</h1> 
+			<p>Michael encontra uma lista de apartamentos interessantes.    </p>
+			<p>Michael:15<ruby>ばん<rt>番</rt></ruby>は、いくらですか。  </p>
+<!---
+Juu-go-ban wa ikura desu ka.	Quanto é o número 15?
+Warukunai desu yo.	Isso não é ruim, você sabe.
+Motto yasui no wa arimasen nee.	Não há um mais barato, existe.
+Chotto muzukashii desu nee.	Isso seria um pouco difícil, não seria.
+Rokuman-nanasen-en desu.	É ¥67,000.
+--->
+			<p>Honda:<ruby>六万七千円<rt>ろくまんななせんえん</rt></ruby>です。  </p>
+			<p>Michael: <ruby>悪<rt>わる</rt></ruby>くないですよ。</p>						
+			<p>Michael:もっと<ruby>安<rt>やす</rt></ruby>いのはありませんかねえ。</p>
+			<p>Honda:ちょっとむずかしいですねえ。</p>						
+
+			<h1>Vocabulário</h1>
+			<table>
+			<!--Head-->
+			<tr>
+				<td>Word</td>
+				<td>Hiragana</td>
+				<td>Romaji</td>
+				<td>Meaning</td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<!--Row 2-->
+			<tr>
+				<!--Word--><td>十五</td>
+				<!--Hiragana--><td>じゅうご</td>
+				<!--Romaji--><td class="romaji">juugo</td>
+				<!--Translation--><td>quinze</td>
+			</tr>
+			<!--Row 3-->
+			<tr>
+				<!--Word--><td>番</td>
+				<!--Hiragana--><td>ばん	</td>
+				<!--Romaji--><td class="romaji">ban</td>
+				<!--Translation--><td>(ordinal) número </td>
+			</tr>
+			<!--Row 4-->
+			<tr>
+				<!--Word--><td>十五番</td>
+				<!--Hiragana--><td>じゅうごばん</td>
+				<!--Romaji--><td class="romaji">juugo-ban</td>
+				<!--Translation--><td>número quinze </td>
+			</tr>
+			<!--Row 5-->
+			<tr>
+				<!--Word--><td>いくら</td>
+				<!--Hiragana--><td>	</td>
+				<!--Romaji--><td class="romaji">ikura</td>
+				<!--Translation--><td>quantos? </td>
+			</tr>
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>六万</td>
+				<!--Hiragana--><td>ろくまん	</td>
+				<!--Romaji--><td class="romaji">rokuman</td>
+				<!--Translation--><td>60.000 </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>七千</td>
+				<!--Hiragana--><td>ななせん	</td>
+				<!--Romaji--><td class="romaji">nanasen</td>
+				<!--Translation--><td>7000 </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>円</td>
+				<!--Hiragana--><td>えん</td>
+				<!--Romaji--><td class="romaji">en</td>
+				<!--Translation--><td> iene (moeda do Japão)</td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>六万七千円</td>
+				<!--Hiragana--><td>ろくまんななせんえん	</td>
+				<!--Romaji--><td class="romaji">rokuman-nanasen-en</td>
+				<!--Translation--><td>¥67,000 </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>悪い</td>
+				<!--Hiragana--><td>わるい</td>
+				<!--Romaji--><td class="romaji">warui</td>
+				<!--Translation--><td>mau </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>悪くない</td>
+				<!--Hiragana--><td>わるくない	</td>
+				<!--Romaji--><td class="romaji">waruku nai</td>
+				<!--Translation--><td>nada mal </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>もっと</td>
+				<!--Hiragana--><td></td>
+				<!--Romaji--><td class="romaji">motto</td>
+				<!--Translation--><td> mais	</td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>もっと安い	</td>
+				<!--Hiragana--><td>もっとやすい</td>
+				<!--Romaji--><td class="romaji">motto yasui</td>
+				<!--Translation--><td>mais barato </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>の	</td>
+				<!--Hiragana--><td>			</td>
+				<!--Romaji--><td class="romaji">no</td>
+				<!--Translation--><td>um(s) </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>	難しい		</td>
+				<!--Hiragana--><td>むずかしい	</td>
+				<!--Romaji--><td class="romaji">muzukashii	</td>
+				<!--Translation--><td>difícil, difícil </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>	ドル		</td>
+				<!--Hiragana--><td>どる</td>
+				<!--Romaji--><td class="romaji">＋doru</td>
+				<!--Translation--><td>dólar </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>やさしい	</td>
+				<!--Hiragana--><td></td>
+				<!--Romaji--><td class="romaji">＋yasashii	</td>
+				<!--Translation--><td>fácil, gentil </td>
+			</tr>				
+			</table>
+<!---------------------------------------NOTAS DE GRAMÁTICA----------------------------------->
+			<h1>Notas de Gramática</h1>
+			<h2>3-2-1 Números e Classificadores <i class="romaji"></i>(~en, ~doru, ~ban)</h2>
+
+			<p>
+			Os números Japoneses estão listados no final desta lição. Observe que os números 4, 7 e 9 tem formas alternadas: <i class="romaji"></i>yon, yo e shi para 4, <i class="romaji"></i>nana e shichi para 7 e <i class="romaji"></i>kyuu e ku para 9. 
+			A forma depende de qual classificador é combinado com o número (Veja abaixo para classificadores).
+			Em Japonês, os números com cinco ou mais casas são contados em grupos de quatro casas <i class="romaji"></i>(~man, ~oku, ~chou). 
+			Por outro lado, em Inglês esses números são contados por grupos de três lugares (milhares, milhões, bilhões). 
+			Assim, dez mil em Japonês têm nome especial man, e grupos sucessivos de quatro lugares têm os nomes <i class="romaji"></i>~oku, e <i class="romaji"></i>~chou. 
+			Tradicionalmente, uma vírgula era inserida a cada quatro lugares (10,000 foi escrito 1,0000).
+			Observe que 10, 100 e 1000 não exigem <i class="romaji"></i>ichi, mas 10,000 exige. Em outras palavras, você precisa dizer <i class="romaji"></i>ichi apenas para o ultimo lugar em cada grupo de quatro lugares.
+			</p>
+			<table>
+			<tr>
+				<td>1 </td>
+				<td>10 </td>
+				<td>100 </td>
+				<td>1000 </td>
+				<td>10000 </td>
+				<td>100000 </td>
+				<td>1000000 </td>
+				<td>10000000</td>
+			</tr>
+			<tr>
+				<td class="romaji">ichi</td>
+				<td class="romaji">juu</td>
+				<td class="romaji">hyaku</td>
+				<td class="romaji">sen</td>
+				<td class="romaji">ichi-man</td>
+				<td class="romaji">juu-man</td>
+				<td class="romaji">hyaku-man</td>
+				<td class="romaji">sen-man</td>
+			</tr>
+			</table>
+			<p>
+				Assim, ¥11111111 é <i class="romaji"></i>sen hyaku juu ichi man sen hyaku juu ichi en. Observe também as seguintes alterações de som. Por 100’s <i class="romaji"></i>(hyaku)	h→ b 300 <i class="romaji"></i>sanbyaku; ?00 <i class="romaji"></i>nanbyaku (quantas centenas?) h→ pp 600 <i class="romaji"></i>roppyaku; 800 <i class="romaji"></i>happyaku. Por 1000’s <i class="romaji"></i>(sen)	s→z	3000 <i class="romaji"></i>sanzen; ?000 <i class="romaji"></i>nanzen (quantos milhares?) s→ss	8000 <i class="romaji"></i>hassen
+				Os números Japoneses são geralmente seguidos de um classificador, que indica o que é contado ou numerado. O uso de números ‘vazios’ é bastante limitado (contando o número de flexões, etc.) Ao contar coisas em Japonês, os números são combinados que são convencionalmente usados para os substantivos específicos que estão sendo contados. 
+				Isso é semelhante a expressões em Inglês como “dez folhas de papel” (não dez papéis), ou “um pedaço de pão” (não um pão.)
+			</p>
+
+			<p>
+				Lembre-se de que o classificador para o tempo do relógio é <i class="romaji"></i>–ji, e a nota grade na escola é <i class="romaji"></i>–nensei. 
+				Adicionamos mais três nesta lição: <i class="romaji"></i>–en para meoda Japonesa, <i class="romaji"></i>–doru para moeda EUA, e <i class="romaji"></i>–ban para os números em ordem (primeiro, segundo, etc.) 
+				Antes <i class="romaji"></i>–ji, 4, 7, e 9 são respectivamente <i class="romaji"></i>yo, shichi, e ku. 
+				Conforme mostrado no gráfico abaixo, antes de <i class="romaji"></i>–en o número 4 é <i class="romaji"></i>yon, e os números 7 e 9 antes de <i class="romaji"></i>–en, doru e –ban são <i class="romaji"></i>nana, e kyuu. 
+				O classificador <i class="romaji"></i>-ban também é usado para classificação (primeiro lugar, segundo lugar, etc) .
+				<i class="romaji"></i>Ichi-ban também é usado como um advérbio para significar ‘mais’ ou ‘melhor.’ 
+				O tom muda para o uso adverbial <i class="romaji"></i>(iCHIban → iCHIBAN)
+			</p>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+<!--Romaji-->		<td class="romaji">Ichi-ban jouzu</td>
+<!--Translation-->	<td>mais habilidoso</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Ichi-ban atarashii</td>
+<!--Translation-->	<td>o mais novo</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Ichiban ii daigaku</td>
+<!--Translation-->	<td>a melhor faculdade</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>													
+			<h1>Tabela 8. Classificadores para números 1~10, bem como um número desconhecido, para sufixos -en, -doru, e -ban</h1>
+			<table>
+			<tr>
+				<td></td>
+				<td class="romaji">-en</td>
+				<td class="romaji">-doru</td>
+				<td class="romaji">-ban</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td class="romaji">ichi en</td>
+				<td class="romaji">ichi doru</td>
+				<td class="romaji">ichi</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td class="romaji">ni en</td>
+				<td class="romaji">ni doru</td>
+				<td class="romaji">ni ban</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td class="romaji">san en</td>
+				<td class="romaji">san doru</td>
+				<td class="romaji">san ban</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td class="romaji">yon en</td>
+				<td class="romaji">yon doru</td>
+				<td class="romaji">yon ban</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td class="romaji">go en</td>
+				<td class="romaji">go doru</td>
+				<td class="romaji">go ban</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td class="romaji">roku en</td>
+				<td class="romaji">roku doru</td>
+				<td class="romaji">roku ban</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td class="romaji">nana en</td>
+				<td class="romaji">nana doru</td>
+				<td class="romaji">nana ban</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td class="romaji">hachi en</td>
+				<td class="romaji">hachi doru</td>
+				<td class="romaji">hachi ban</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td class="romaji">kyuu en</td>
+				<td class="romaji">kyuu doru</td>
+				<td class="romaji">kyuu ban</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td class="romaji">juu en</td>
+				<td class="romaji">juu doru</td>
+				<td class="romaji">juu ban</td>
+			</tr>
+			<tr>
+				<td>Quantos?</td>
+				<td class="romaji">nan en</td>
+				<td class="romaji">nan doru</td>
+				<td class="romaji">nan ban</td>
+			</tr>
+			</table>
+			<h1>3-2−2	Pronome Não</h1>
+			<p>Lembre-se de que temos as três estruturas do sintagma nominal.</p>
+			<table>
+			<tr>
+				<td>Adjective + Noun</td>
+				<td class="romaji">yasui apaato</td>
+				<td>apartamento barato</td>
+			</tr>
+			<tr>
+				<td class="romaji">kono apaato</td>
+				<td class="romaji">Kono + Noun		</td>
+				<td>este apartamento</td>
+			</tr>
+			<tr>
+				<td class="romaji">Noun no Noun</td>
+				<td class="romaji">watashi no apaato	</td>
+				<td>meu apartamento</td>
+			</tr>
+			</table>
+			<p>Soa muito prolixo e sem sofisticação se o mesmo substantivo for repetido desnecessariamente. Como podemos evitar a repetição do substantive principal nessas estruturas quando ele já é conhecido do contexto?</p>
+			<p>Para a Estrutura 1, substitua o substantivo pelo pronome <i class="romaji"></i>no.  <i class="romaji"></i>→ yasui no	um barato Para a Estrutura 2, use <i class="romaji"></i>kore-sore-are-dore, em vez disso.	→ kore		isso. <br>Para a Estrutura 3, basta soltá-la.<i class="romaji"></i>	→ watashi no meu</p>
+			<p>O pronome <i class="romaji"></i>no pode substituir o substantive diretamente após um adjetivo, mas geralmente não é usado para se referir a pessoas. Essas regras são válidas quando as três estruturas são combinada.</p>				
+			<p><i class="romaji"></i>kono atarashii apaato 	este novo apartamento → <i class="romaji"></i>kono atarashii no</p>
+			<p><i class="romaji"></i>watashi no kono kaban 	esta minha bolsa 	→ <i class="romaji"></i>watashi no kore atarashii Amerika no kaisha   nova companhia Americana	→ <i class="romaji"></i>atarashii Amerika no</p>
+			<h1>3-2-3 <i class="romaji"></i>ka nee ‘Eu me pergunto’</h1>
+			<p>Algumas partículas de sentença podem ocorrer em combinação. Uma combinação comum é <i class="romaji"></i>ka nee ‘Eu me pergunto.’ <i class="romaji"></i>Ka indica dúvida e <i class="romaji"></i>nee indica que o falante presume que o ouvinte tem a mesma dúvida. No diálogo acima, Michael pergunta se há apartamentos mais baratos, supondo Sra. Honda entenda sua situação. Compare o seguinte:</p>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+<!--Romaji-->	<td class="romaji">Motto yasui no wa arimasen ka.</td>
+<!--Translation-->	<td>Não existe mais baratos?</td>
+			</tr>
+			<tr>
+<!--Romaji-->	<td class="romaji">Motto yasui no wa arimasen ka nee.</td>
+<!--Translation--><td>Eu me pergunto se existem outros mais baratos.</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>					
+			<p>Enquanto o primeiro pede uma resposta, o seguno não exige uma resposta porque o falante presume que outra pessoa compatilha a mesma pergunta. O resultado é mais suave. Ka nee também é usado como uma resposta educada a uma pergunta quando o falante não sabe a resposta.</p>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+<!--Romaji-->		<td class="romaji">Ano hito dare desu ka?</td>
+<!--Translation-->	<td>Quem é aquela pessoa?</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">-Dare desu ka nee.	</td>
+<!--Translation-->	<td>Eu me pergunto, também.</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Dare no kasa desu ka?	</td>
+<!--Translation-->	<td>De quem é esse gurda-chuva?</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">-Dare no desu ka nee. </td>
+<!--Translation-->	<td>Eu me pergunto de quem é, também.</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>											
+			<h1>Treinos e Exercícios</h1>							
+<!------------------------------RemoveThisLater------------------------------>
+			<h1>A.</h1> 
+			<table>
+			<tr>
+				<td>Sugestão</td>
+				<td>Resposta</td>
+			</tr>
+			<tr>
+				<td class="romaji">Go-en desu ka.</td>
+				<td class="romaji">Ie-ie, gojuu-en desu yo.</td>	
+			</tr>
+			<tr>
+				<td>São cinco ienes?</td>
+				<td>Não, não, é fifty cinqueta ienes!</td>
+			</tr>
+			</table>
+			<table>
+			<tr>
+				<td>Sugestão</td>
+				<td>Resposta</td>
+			</tr>
+			<tr>
+				<td class="romaji">Nihyaku-en desu ka.</td>
+				<td class="romaji">Ie-ie, nisen-en desu yo.</td>	
+			</tr>
+			<tr>
+				<td>São duzentos ienes?</td>
+				<td>Não, não, são dois mil ienes!</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>							
+			<h1>B.</h1> 
+			<table>
+			<tr>
+				<td>Sugestão</td>
+				<td>Resposta</td>
+			</tr>
+			<tr>
+				<td class="romaji">Takai desu nee.	</td>
+				<td class="romaji">Ee, motto yasui no wa arimasen nee.</td>	
+			</tr>
+			<tr>
+				<td>É caro, não é!</td>
+				<td>Sim, não há nenhum mais barato, não é.</td>
+			</tr>
+			</table>
+			<table>
+			<tr>
+				<td>Sugestão</td>
+				<td>Resposta</td>
+			</tr>
+			<tr>
+				<td class="romaji">Chiisai desu nee.	</td>
+				<td class="romaji">Ee, motto ookii no wa arimasen nee.</td>	
+			</tr>
+			<tr>
+				<td>É pequeno, não é!</td>
+				<td>Sim, não existem maiores, existem.</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>
+			<h1>C</h1>
+			<table>
+			<tr>
+				<td>Sugestão</td>
+				<td>Resposta</td>
+			</tr>
+			<tr>
+				<td class="romaji">Minna, ookii desu nee.	</td>
+				<td class="romaji">Ichiban ookii no wa, dore desu ka.</td>	
+			</tr>
+			<tr>
+				<td>Eles são todos grandes, não são eles!</td>
+				<td>Qual é o maior? </td>
+			</tr>
+			</table>
+			<table>
+			<tr>
+				<td>Sugestão</td>
+				<td>Resposta</td>
+			</tr>
+			<tr>
+				<td class="romaji">Minna, furui desu nee.	</td>
+				<td class="romaji">Ichiban furui no wa, dore desu ka.	</td>	
+			</tr>
+			<tr>
+				<td>Eles são todos velhos, não são eles!</td>
+				<td> Qual é o mais antigo?</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>
+			<h1>D</h1>. 
+			<h2>Diga em Japonês</h2>.
+			<h2>Foi perguntado a você o preço de algo. Responda.</h2>
+			<ol>
+				<li>¥ 650</li>
+				<li>¥ 1010</li>
+				<li>¥ 14000</li>
+				<li>¥790000</li>
+				<li>¥ 8800</li>
+				<li>¥ 3300</li>
+				<li>¥1111</li>
+			</ol>
+			<p>Em uma reunião, pergunte o que as outras pessoas pensam sobre o seguinte:</p>
+			<ol>
+				<li>uma nova companhia</li>
+				<li>o livro Chinês mais difícil</li>
+				<li>o mais fácil</li>
+				<li>o celular #13</li>
+				<li>Novo cursos do Prof. Kimura terça e quinta</li>
+			</ol>
+
+			<h1>E</h1> 
+			<h2>Aja em Japonês com um parceiro.</h2>
+			<ol>
+				<li>Em uma loja de sapatos, você experimentou um par e descobriu que era muito pequeno. Chame a atenção de um balconista e peça um par um pouco maior.</li>
+				<li>Ao navegar em um site de compras online, Sra. Honda interpretou erroneamente o preço de um item como 5000 ienes. Na verdade, é 50000 ienes. Corrija-a bem.</li>
+				<li>Descubra a taxa de câmbio atual do dólar para o iene.</li>
+				<li>Você está fazendo uma tarefa de casa. Exclame que a pergunta #14 é difícil. Pergunte se a Sra. Honda entende.</li>
+				<li>Você foi questionado sobre sua opinião sobre um apartamento. Mencione que não é ruim, mas você se pergunta quanto é o preço do aluguel.</li>
+				<li>Com um parceiro, pergunte e responda quanto custa algo. Troque opiniões sobre o preço.</li>
+			</ol>
+
+			<h1>Diálogo 3</h1> 
+			<p>Michael verifica o apartamento mais detalhadamente.</p>									
+			<p>Michael:すごくきれいなアパートですねえ。 </p>
+			<p>Honda:でも、ちょっと<ruby>遠<rt>とお</rt></ruby>くないですか。</p>
+			<p>Michael:そうですね。あまり<ruby>便利<rt>べんり</rt></ruby>じゃないですね。 	 </p>
+			<p>Honda:<ruby>残念<rt>ざんねん</rt></ruby>ですねえ。</p>
+<!---
+Zannen desu nee.
+Que pena, hein!
+Sou desu ne. Amari benri ja nai desu nee. Você está certo. Não é muito conviniente, é isso.
+De mo chotto tooku nai desu ka.	Mas não é um pouco longe?
+Sugoku kirei na apaato desu nee.	É um apartamento muito bonito, não é!
+
+--->
+			<h1>Vocabulário</h1>
+			<table>
+			<!--Head-->
+			<tr>
+				<td>Word</td>
+				<td>Hiragana</td>
+				<td>Romaji</td>
+				<td>Meaning</td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<!--Row 2-->
+			<tr>
+				<!--Word--><td>凄い		</td>
+				<!--Hiragana--><td>すごい	</td>
+				<!--Romaji--><td class="romaji">sugoi</td>
+				<!--Translation--><td>incrível, ótima </td>
+			</tr>
+			<!--Row 3-->
+			<tr>
+				<!--Word--><td>凄く		</td>
+				<!--Hiragana--><td>すごく	</td>
+				<!--Romaji--><td class="romaji">sugoku</td>
+				<!--Translation--><td>realmente, supreendentemente </td>
+			</tr>
+			<!--Row 4-->
+			<tr>
+				<!--Word--><td>きれい（な）	</td>
+				<!--Hiragana--><td>		</td>
+				<!--Romaji--><td class="romaji">kirei</td>
+				<!--Translation--><td>bonita, limpa </td>
+			</tr>
+			<!--Row 5-->
+			<tr>
+				<!--Word--><td>でも	</td>
+				<!--Hiragana--><td>		</td>
+				<!--Romaji--><td class="romaji">de mo</td>
+				<!--Translation--><td>mas </td>
+			</tr>
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>遠い		</td>
+				<!--Hiragana--><td>とおい	</td>
+				<!--Romaji--><td class="romaji">tooi</td>
+				<!--Translation--><td>distante </td>
+			</tr>				
+			<tr>
+				<!--Word--><td>便利		</td>
+				<!--Hiragana--><td>べんり（な）	</td>
+				<!--Romaji--><td class="romaji">benri</td>
+				<!--Translation--><td>conveniente </td>
+			</tr>				
+			<tr>
+				<!--Word--><td>残念		</td>
+				<!--Hiragana--><td>ざんねん（な）	</td>
+				<!--Romaji--><td class="romaji">zannen</td>
+				<!--Translation--><td>que pena, lamentável </td>
+			</tr>				
+			<tr>
+				<!--Word--><td>きたない	</td>
+				<!--Hiragana--><td>		</td>
+				<!--Romaji--><td class="romaji">＋kitanai</td>
+				<!--Translation--><td>sujo </td>
+			</tr>				
+			<tr>
+				<!--Word--><td>近い		</td>
+				<!--Hiragana--><td>ちかい	</td>
+				<!--Romaji--><td class="romaji">＋chikai</td>
+				<!--Translation--><td>perto, perto </td>
+			</tr>				
+			<tr>
+				<!--Word--><td>不便		</td>
+				<!--Hiragana--><td>ふべん（な）	</td>
+				<!--Romaji--><td class="romaji">＋fuben</td>
+				<!--Translation--><td>inconveniente </td>
+			</tr>				
+			<tr>
+				<!--Word--><td>だめ（な）	</td>
+				<!--Hiragana--><td>		</td>
+				<!--Romaji--><td class="romaji">＋dame</td>
+				<!--Translation--><td>mau, inaceitável </td>
+			</tr>				
+			<tr>
+				<!--Word--><td>有名		</td>
+				<!--Hiragana--><td>ゆうめい（な）	</td>
+				<!--Romaji--><td class="romaji">＋yuumei</td>
+				<!--Translation--><td>famoso </td>
+			</tr>								
+			</table>
+<!--------------------------------------NOTAS DE GRAMÁTICA----------------------------------->
+			<h1>Notas de Gramática</h1>
+			<h1>3-3-1 Na-Substantivo</h1>
+			<p>Quando um substantive descreve outro, existem dois padrões possíveis. Vocês já viu um deles com a partícula no: watashi no keitai ‘meu celular,’ nihongo no sensei ‘o professor de Japonês. ’Um conjunto menor de substantivos liga-se a substantivos com a partícula na: kirei na nihongo ‘linda Japonesa,’ benri na keitai ‘telefone celular conveniente.’Estes serão chamados “na nouns.” Todos os substantivos na são intangíveis, mas nem todos os intangíveis são substantivos na. Todos os substantivos na serão seguidos por (na) no glossário para distingui-los dos substantivos regulares. Observe que o pronome no pode substituir o substantivo principla nesta combinação.</p>
+			<p>kirei na apaato    um apartamento limpo → kirei na no	um limpo</p>
+			<p>amerika no yuumei na kaisha	uma companhia famosa na América → amerika no yuumei na no	um famoso na América</p>
+			<h1>3-3-2 Adjetivo ~Formas Ku como Advérbios</h1>
+			<p>O –A forma ku de ajetivos também é usada como advérbios.</p>
+					
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+<!--Romaji-->		<td class="romaji">Yoku wakarimasu.	</td>
+<!--Translation-->	<td>Eu entendo bem.</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Sugoku kirei desu.	</td>
+<!--Translation-->	<td>É realmente bonito.</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Yasuku kaimashita.</td>
+<!--Translation-->	<td>	Eu comprei barato.</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Ookiku kakimasu.	</td>
+<!--Translation-->	<td>Vou escrever grande.</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Atarashiku tsukurimasu.	</td>
+<!--Translation-->	<td>Eu vou refazê-lo.</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>					
+<!--------------------------------------TREINOS-EXERCICIOS----------------------------------->
+			<h1>Treinos e Exercicíos</h1>
+			<h1>A.  </h1>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>Kirei desu ka	</td><!--Cue_1-->
+				<td> Ee, sugoku kirei na apaato desu yo. 	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td>Está limpo?	</td><!--Cue_1_Translation-->
+				<td>Sim, é um apartamento muito limpo!	</td><!--Response_1_Translation-->
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>Takai desu ka.		</td><!--Cue_1-->
+				<td>Ee, sugoku takai apaato desu yo. 	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td>É caro?	</td><!--Cue_1_Translation-->
+				<td>Sim, é um apartamento muito caro!	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>	
+			<h1>B</h1> 
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>Kirei desu ka.	</td><!--Cue_1-->
+				<td>Iya, kirei ja nai desu yo 	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td>Está limpo?	</td><!--Cue_1_Translation-->
+				<td>Não, não está limpo!	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>Tooi desu ka.	 	</td><!--Cue_1-->
+				<td>Iya, tooku nai desu yo.		</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td>É longe?	</td><!--Cue_1_Translation-->
+				<td>Não, não é longe!	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+			<h1>C. Diga em Japonês.</h1>
+			<p>Sua opinião sobre um apartamento foi solicitada a você.</p>
+			<ol>
+				<li>1. Não é um pouco longe?</li>
+				<li>2. Não é um pouco inconveniente? Não há nada mais perto?</li>
+				<li>3. É realmente lindo, não é. No entanto, eu me pergunto onde ele está localizado.</li>
+				<li>4. Não é bom. É grande, mas é muito antigo. Que pena.</li>
+				<li>5. É aquele apartamento famoso, não é. É o mais caro, você sabe.</li>
+			</ol>
+			<h1>D. Desempenhe essas funções em Japonês com um parceiro.</h1>
+			<ol>
+				<li>1. Seu amigo obteve uma pntuação perfeita em um teste. Exclame seu espanto.</li>
+				<li>2. Uma colega menciona que não comparecerá ao evento da companhia. Expresse sua decepção.</li>
+				<li>3. Você foi convidado a fazer um discurso em Japonês. Recuse humildemente a oportunidade e pergunte se não há ninguém melhor.</li>
+				<li>4. Um colega de trabalho mostrou a você uma foto de sua mãe. Comente como ela é linda.</li>
+				<li>5. Compare os produtos no mercado por fabricante, preço, tamanho, utilidade, etc.</li>
+			</ol>
+			<h1>Diálogo 4 </h1>
+			<p>Michael se instalou em seu novo apartamento. Sra. Honda está verificando se ele precisa de alguma coisa.</p>
+			<p>Honda:いすとか<ruby>机<rt>つくえ</rt></ruby>  、ありますか。  </p>
+			<p>Michael: はい、いすも <ruby>机<rt>つくえ</rt></ruby> もあります。<ruby>大丈夫です。<rt>だいじょうぶ</rt></ruby> </p>
+			<p>Honda:<ruby>本当<rt>ほんとう</rt></ruby>ですか。テレビは？</p>
+			<p>Michael:ああ、テレビはいりません。</p>
+<!----
+Isu toka tsukue, arimasu ka.	Você tem coisas como cadeiras e mesas?
+ Hai, isu mo tsukue mo arimasu.	Sim, tenho cadeiras e mesas.
+ Hontou desu ka. Terebi wa?	Sem brincadeiras. Que ta luma televisão?
+ Aa, terebi wa irimasen.	Oh, uma televisão que eu não preciso.
+Daijoubu desu.	Estou bem.
+---->
+			<h1>Vocabulário </h1>
+			<table>
+			<!--Head-->
+			<tr>
+				<td>Word</td>
+				<td>Hiragana</td>
+				<td>Romaji</td>
+				<td>Meaning</td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<!--Row 2-->
+			<tr>
+				<!--Word--><td>	いす			</td>
+				<!--Hiragana--><td></td>
+				<!--Romaji--><td><i class="romaji">	isu</i></td>
+				<!--Translation--><td>cadeira </td>
+			</tr>
+			<!--Row 3-->
+			<tr>
+				<!--Word--><td>	とか			</td>
+				<!--Hiragana--><td></td>
+				<!--Romaji--><td><i class="romaji">toka	</i></td>
+				<!--Translation--><td>tal (coisas) como </td>
+			</tr>
+			<!--Row 4-->
+			<tr>
+				<!--Word--><td>		机		</td>
+				<!--Hiragana--><td>つくえ</td>
+				<!--Romaji--><td><i class="romaji">tsukue	</i></td>
+				<!--Translation--><td>escrivaninha </td>
+			</tr>
+			<!--Row 5-->
+			<tr>
+				<!--Word--><td>	いすとかつくえ	いすとか机		</td>
+				<!--Hiragana--><td></td>
+				<!--Romaji--><td><i class="romaji">isu toka tsukue	</i></td>
+				<!--Translation--><td>coisas como cadeiras e uma mesa </td>
+			</tr>
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>	〜も〜も		</td>
+				<!--Hiragana--><td></td>
+				<!--Romaji--><td><i class="romaji">mo ~mo	</i></td>
+				<!--Translation--><td>ambos ~ e ~	 </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>		いすも机も		</td>
+				<!--Hiragana--><td>いすもつくえも</td>
+				<!--Romaji--><td><i class="romaji">isu mo tsukue mo	</i></td>
+				<!--Translation--><td>cadeiras e mesas </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>	大丈夫		</td>
+				<!--Hiragana--><td>だいじょうぶ（な）</td>
+				<!--Romaji--><td><i class="romaji">daijoubu	</i></td>
+				<!--Translation--><td>multar, seguro, ok </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>	本当		</td>
+				<!--Hiragana--><td>ほんとう	</td>
+				<!--Romaji--><td><i class="romaji">hontou	</i></td>
+				<!--Translation--><td>verdade, realidade, facto </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>テレビ		</td>
+				<!--Hiragana--><td>てれび	</td>
+				<!--Romaji--><td><i class="romaji">terebi		</i></td>
+				<!--Translation--><td>televisão </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td></td>
+				<!--Hiragana--><td>や		</td>
+				<!--Romaji--><td><i class="romaji">	</i>＋ya	</td>
+				<!--Translation--><td>tal (isso) como	 </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>テーブル		</td>
+				<!--Hiragana--><td>てえぶる	</td>
+				<!--Romaji--><td><i class="romaji">＋teeburu		</i></td>
+				<!--Translation--><td>tabela, table </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>ベッド		</td>
+				<!--Hiragana--><td>べっど	</td>
+				<!--Romaji--><td><i class="romaji">＋beddo		</i></td>
+				<!--Translation--><td>cama,bed </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>		冷蔵庫	</td>
+				<!--Hiragana--><td>れいぞうこ</td>
+				<!--Romaji--><td><i class="romaji">＋reizouko	</i></td>
+				<!--Translation--><td>frigorífico	 </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>		洗濯	</td>
+				<!--Hiragana--><td>せんたく</td>
+				<!--Romaji--><td><i class="romaji">	</i>＋sentaku (shimasu)</td>
+				<!--Translation--><td>lavadeira	 </td>
+			</tr>				
+
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>		洗濯機	</td>
+				<!--Hiragana--><td>せんたくき</td>
+				<!--Romaji--><td><i class="romaji">＋sentaku-ki	</i></td>
+				<!--Translation--><td> máquina de lavar	</td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>	掃除	</td>
+				<!--Hiragana--><td>そうじ	</td>
+				<!--Romaji--><td><i class="romaji">	＋souji (shimasu)</i></td>
+				<!--Translation--><td>limpeza	 </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>		掃除機	</td>
+				<!--Hiragana--><td>そうじき</td>
+				<!--Romaji--><td><i class="romaji">	＋souji-ki</i></td>
+				<!--Translation--><td>aspirador de pó </td>
+			</tr>				
+			<!--Row 6-->
+			<tr>
+				<!--Word--><td>エアコン	</td>
+				<!--Hiragana--><td>えあこん	</td>
+				<!--Romaji--><td><i class="romaji">	＋eakon	</i></td>
+				<!--Translation--><td>ar concionado </td>
+			</tr>				
+			</table>
+					<!--------------------------------------NOTAS DE GRAMÁTICA----------------------------------->
+			<h1>Notas de Gramática</h1>
+				<h1>3-4-1 X toka Y, X ya Y</h1>
+					<p>/Substantivo to ka Substantivo/ significa que os substantivos referenciados são exemplos da categoria em discussão. /Substantivo ya Substantivo/ é sua versão mais formal. Mais de dois exemplos podem ser listados, mas é incomumi term ais de três ou quatro.</p>		
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+<!--Romaji-->		<td class="romaji">Isu toka tsukue, arimasu ka.	</td>
+<!--Translation-->	<td>Você tem coisas como cadeiras e mesas?</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji"><p>Isu ya tsukue arimasu ka.	</p></td>
+<!--Translation-->	<td>Você tem coisas como cadeiras e mesas?</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Isu toka tsukue toka terebi, arimasu ka.</p></td>
+<!--Translation-->	<td> Você tem coisas como cadeiras, mesa e TV?</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>					
+			<p>Toka não requer outro substantive para segue-lo enquanto ya faz. Potanto, o seguinte é possível.</p>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+<!--Romaji-->		<td class="romaji">Keitai toka tsukaimasu ka.	</td>
+<!--Translation-->	<td>Você usa coisas como smartphone?</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">Keitai toka sumaho toka tsukaimaus ka.	</td>
+<!--Translation-->	<td>Você usa coisas como celulares e smartphones?</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>					
+			<h1>3-4-2 X mo Y mo - ‘tanto X e Y’ ‘nenhum X nem Y’</h1>
+			<p>X mo Y mo means ‘tanto X e Y’ em uma sentença afirmativa e ‘nenhum X nem Y’ em uma sentença negativa. Compare as três resposta abaixo.</p>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+<!--Romaji-->		<td class="romaji">Kore to are, irimasu ka.</td>
+<!--Translation-->	<td>	Você precisa disso e daquilo?</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">-Hai, kore mo are mo irimasu.	</td>
+<!--Translation-->	<td>Yes, I need them both.</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">-Iie, kore mo are mo irimasen.	</td>
+<!--Translation-->	<td>Não, eu não preciso disso ou daquilo.</td>
+			</tr>
+			<tr>
+<!--Romaji-->		<td class="romaji">-Iie, kore wa irimasu kedo, are wa irimasen. </td>
+<!--Translation-->	<td>Não, eu preciso disso, mas não preciso disso.</td>
+			</tr>
+			</table>
+<!------------------------------RemoveThisLater------------------------------>					
+			<p>Nas duas primeiras respostas, ambos os itens compartilham uma semelhança,ou seja, você precisa de ambos ou não precisa de nenhum deles, mas na Terceira frase os dois itens estão sendo contrastados, ou seja, você precisa de um, mas não do outro, portanto, a partícula wa é usada.</p>
+<!-----------------------TREINOS-EXERCICIOS----------------------------------->
+			<h1>Treinos e Exercícios</h1>
+			<h1>A. Ouça o áudio . Após as duas primeiras trocas de modelos, responda a cada sugestão. </h1>
+<!------------------------------RemoveThisLater------------------------------>
+
+			<table>
+			<tr>
+				<td></td>
+				<td> Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>	Isu to ka tsukue, arimasu ka.	</td><!--Cue_1-->
+				<td>Hai, isu mo tsukue mo arimasu.		</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td>Eles têm coisas como cadeiras e mesas? 	</td><!--Cue_1_Translation-->
+				<td>Sim, eles têm cadeiras e mesas.	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td> Sugestão	</td><!--Cue_Title-->
+				<td>	Resposta</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>Keetai to ka sumaho, arimasu ka.	</td><!--Cue_1-->
+				<td>Hai, keetai mo sumaho mo arimasu.	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td>Eles têm coisas como telefones celulares e smartphone?	</td><!--Cue_1_Translation-->
+				<td>Sim, eles têm telefones celulares e smartphone.	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+			<h1>B.</h1> 
+<!------------------------------RemoveThisLater------------------------------>
+			<table>
+			<tr>
+				<td></td>
+				<td>	</td><!--Cue_Title-->
+				<td>	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>Isu ya tsukue, arimasu ka.	  	</td><!--Cue_1-->
+				<td>Ie, isu mo tsukue mo arimasen. 	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td>Eles têm coisas como cadeiras e mesas?	</td><!--Cue_1_Translation-->
+				<td>Não, eles não têm cadeiras nem mesas.	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+<!------------------------------RemoveThisLater------------------------------>
+
+			<table>
+			<tr>
+				<td></td>
+				<td>Sugestão	</td><!--Cue_Title-->
+				<td>Resposta	</td><!---Response_Title-->
+			</tr>
+			<tr>
+				<td>Eigo ya Supeingo, wakarimasu ka.	</td><!--Cue_1-->
+				<td>Ie, eigo mo supeingo mo wakarimasen.	</td><!--Response_1-->								
+			</tr>
+			<tr>
+				<td>Eles entendem coisas como Inglês e Espanhol?	</td><!--Cue_1_Translation-->
+				<td>Não, eles não entendem nem Inglês nem Espanhol.	</td><!--Response_1_Translation-->
+			</tr>	
+			</table>
+<!------------------------------RemoveThisLater------------------------------>
+			<h1>C. Diga em Japonês.</h1>
+			<p>Foi perguntado a você o que você precisa para seu novo apartamento.</p>
+			<ol>
+				<li>Eu tenho tudo. Estou bem.</li>
+				<li>Eu tenho uma cadeira, mas não tenho uma escrivaninha nem uma mesa.</li>
+				<li>Eu tenho uma geladeira, mas não tenho uma máquina de lavar. Eu me pergunto se existe uma máqquina de lavar.</li>
+				<li>Tenho cama e cadeira, mas não tenho TV. Eu também não tenho aspirador de pó.</li>
+				<li>Tenho coisas como meas e cadeira, mas não tenho geladeira, máquina de lavar, etc.</li>
+			<p>Você foi questionado sobre o clima neste fim de semana.</p>			
+				<li>6. Vai ser bom tanto no Sábado. e Sol.</li>
+				<li>Vai ser bom no Sábado., mas vai chover com Sol.</li>
+				<li>Vai ser bom no Sábado. E Domingo., mas vai chover na Segunda-feira.</li>
+				<li>Choveu ontem E hoje, certo? Eu me pergunto se vai chover de novo amanhã.</li>
+				<li>Estava frio ontem. Mas vai ser lindo no Domingo.</li>
+			</ol>
+			<h1>D. Aja em Japonês com um parceiro.</h1>
+			<ol>
+				<li>Um estranho escorregou e caiu na sua frente. Regir!</li>
+				<li>Você acabou de ouvir algo incrível. Expresse sua surpresa/descrença.</li>
+				<li>Descubra se seus colegas usam o Facebook, Twitter, etc.</li>
+				<li>Pergunte a um colega de trabalho se ele, lava roupa, etc. com frequência.</li>
+				<li>Com um parceiro, discuta quais móveis/eletrodomésticos, como eles em seus apartamentos, como eles são e o que você precisa. Certifique-se de ser um bom ouvinte. Use ruído de hesitação, e eco perguntas quando apropriado.</li>
+			</ol>
+<!--------------------------------------REVISÃO----------------------------------->
+			
+			<h1>Revisão</h1>
+			<h1>Revisão Gramatical</h1>
+			<p>1. Japonês tem três tipos de sentenças: sentença verbal, sentença substantiva e sentença adjetiva. Dê o examplo de cada um nas formas Não-passado e formas afirmativas Passadas e suas formas negativas. (3-1- 1)</p>
+			<p>2. Vimos vários exemplos das seguintes maneiras de expander um substantivos emu ma frase nominal. (3-1-2, 3-2-2, 3-3-1)</p>
+			<ul>
+				<li>◦ Substantivo no Substantivo</li>
+				<li>◦ Adjetivo + Substantivo</li>
+				<li>◦ Kono + Substantivo</li>
+				<li>◦ Substantivo na Substantivo</li>
+			</ul>
+			<p>a. Dê um exemplo de cada.</p>
+			<p>b. Dê um exemplo de um substantive nominal com todos os modificadores acima combinados.</p>
+			<p>c. O que acontece em cada caso quando o substantive principal já é compreendido?</p>
+		
+			<h1>3. Compare a diferença de significado entre os seguintes: (3-4-1, 3-4-2)</h1>
+		
+			<p>a. Kami to enpitsu, irimasu ka.</p>
+			<p>b. Kami to enpitsu mo irimasu ka.</p>
+			<p>c. Kami to enpitsu wa irimasu ka.</p>
+			<p>d. Kami mo enpitsu mo irimasu ka.</p>
+			<p>e. Kami toka enpitsu toka irimasu ka.</p>
+			<p>f. Kami toka enpitsu mo irimasu ka.</p>
+			
+			<p>4. Em Inglês, grandes números são contados por grupos de três lugares. Que ta em Japonês? (3-2-1)</p>
+			<p>5. Quais números têm formas alternadas?</p>
+			<p>6. Dê três exemplos de um classificador. Como eles são usados?</p>
+			<p>7. O que significa arimasu? Quais são suas duas formas negativas? (3-1-3)</p>
+			<p>8. Quais são a forma ~ku e ~forma katta para o adjetivo ii? (3-1-1)</p>
+			<p>9. Dê dois exemplos do adjetivo ~forma ku sendo usado como advérbio. (3-3-2)</p>
+			<p>10. Como os substantivos na são diferentes dos adjetivos? De outros substantivos? (3-3-1)</p>
+			
+			<h1>Aplicações Práticas</h1>
+			<p>A. Use listas de apartamentos online e discuta os méritos relativos de cada um.</p>
+			<p>B. Lebre-se do que foi discutido em A. Verifique e compartilhe suas lembranças com outras pessoas.</p>
+			
+			<h1>Números</h1>
+			<h1>Tabela 9. Números 1-40 em grupos de dez, escritos em Japonês com o alfabeto Inglês</h1>
+			<table>
+			<tr>
+				<td>1-10</td>
+				<td>11-20</td>
+				<td>21-30</td>
+				<td>31-40</td>
+				<td>41-50</td>
+			</tr>
+			<tr>
+				<td>Ichi</td>
+				<td>JuuIchi</td>
+				<td>NijuuIchi</td>
+				<td>SanjuuIchi</td>
+				<td>YonjuuIchi</td>
+			</tr>
+			<tr>
+				<td>Ni</td>
+				<td>JuuNi</td>
+				<td>NijuuNi</td>
+				<td>SanjuuNi</td>
+				<td>YonjuuNi</td>			
+			</tr>
+			<tr>
+				<td>San</td>
+				<td>JuuSan</td>
+				<td>NijuuSan</td>
+				<td>SanjuuSan</td>
+				<td>YonjuuSan</td>			
+			</tr>
+			<tr>
+				<td>Yon</td>
+				<td>JuuYon</td>
+				<td>NijuuYon</td>
+				<td>SanjuuYon</td>
+				<td>YonjuuYon</td>
+			</tr>
+			<tr>
+				<td>Go</td>
+				<td>Juu Go</td>
+				<td>NijuuGo</td>
+				<td>SanjuuGo</td>		
+				<td>YonjuuGo</td>	
+			</tr>
+			<tr>
+				<td>Roku</td>
+				<td>JuuRoku</td>
+				<td>NijuuRoku</td>
+				<td>SanjuuRoku</td>
+				<td>YonjuuRoku</td>			
+			</tr>
+			<tr>
+				<td>Nana</td>
+				<td>JuuNana</td>
+				<td>NijuuNana</td>
+				<td>SanjuuNana</td>
+				<td>YonjuuNana</td>
+			</tr>
+			<tr>
+				<td>Hachi</td>
+				<td>JuuHachi</td>
+				<td>NijuuHachi</td>
+				<td>SanjuuHachi</td>			
+				<td>YonjuuHachi</td>
+			</tr>
+			<tr>
+				<td>Kyuu</td>
+				<td>JuuKyuu</td>
+				<td>NijuuKyuu</td>
+				<td>SanjuuKyuu</td>			
+				<td>YonjuuKyuu</td>
+			</tr>
+			<tr>
+				<td>Juu</td>
+				<td>Nijuu</td>
+				<td>Sanjuu</td>
+				<td>Yonjuu</td>
+				<td>GoJuu</td>			
+			</tr>
+			</table>
+			<h1>Tabela 12. Números 81-100 em grupos de dez; 100-1000 em grupos de centenas; e 1000-9000 em gupos de milhares. Tudo escrito em Japonês com alfabeto Inglês.</h1>
+			<table>
+			<tr>
+				<td>81-90</td>
+				<td>91-100</td>
+				<td>100-1000</td>
+				<td>1000-9000</td>
+				<td>Quantos 100?</td>
+				<td>Quantos 1000?</td>								
+			</tr>
+			<tr>
+				<td>HachiJuuIchi</td>
+				<td>KyuuJuuIchi</td>
+				<td>HyakuIchi</td>
+				<td>SenIchi</td>
+				<td>NanByaku</td>
+				<td>NanZen</td>
+			</tr>
+			<tr>
+				<td>HachiJuuNi</td>
+				<td>KyuuJuuNi</td>
+				<td>NiHyaku</td>
+				<td>NiSen</td>			
+			</tr>
+			<tr>
+				<td>HachiJuuSan</td>
+				<td>KyuuJuuSan</td>
+				<td>SanByaku</td>
+				<td>SanZen</td>
+			</tr>
+			<tr>
+				<td>HachiJuuYon</td>
+				<td>KyuuJuuYon</td>
+				<td>Yon/Shi -Hyaku</td>
+				<td>YonSen</td>
+			</tr>
+			<tr>
+				<td>HachiJuuGo</td>
+				<td>KyuuJuu Go</td>
+				<td>GoHyaku</td>
+				<td>GoSen</td>
+			</tr>
+			<tr>
+				<td>HachiJuuRoku</td>
+				<td>KyuuJuuRoku</td>
+				<td>Roppyaku</td>
+				<td>RokuSen</td>
+			</tr>
+			<tr>
+				<td>HachiJuuNana</td>
+				<td>KyuuJuuNana</td>
+				<td>NanaHyaku</td>
+				<td>NanaSen</td>
+			</tr>
+			<tr>
+				<td>HachiJuuHachi</td>
+				<td>KyuuJuuHachi</td>
+				<td>Happyaku</td>
+				<td>HachiSen</td>			
+			</tr>
+			<tr>
+				<td>HachiJuuKyuu</td>
+				<td>KyuuJuuKyuu</td>
+				<td>KyuuHyaku</td>
+				<td>KyuuSen</td>
+			</tr>
+			<tr>
+				<td>KyuJuu</td>
+				<td>Hyaku</td>
+				<td>Sen</td>
+				<td>KyuuSen</td>		
+			</tr>
+			</table>
+			<h1>Tabela 13. Números 10,000 - 90,000 em grupos de dez mil. Escrito em Japonês com alfabeto em Inglês.</h1>
+			<table>
+			<tr>
+				<td>10,000-90,000</td>
+				<td>Quantos 10,000?</td>
+			</tr>
+			<tr>
+				<td>IchiMan</td>
+				<td>NanMan</td>
+			</tr>
+			<tr>
+				<td>NiMan</td>
+			</tr>
+			<tr>
+				<td>SanMan</td>
+			</tr>
+			<tr>
+				<td>YonMan</td>
+			</tr>
+			<tr>
+				<td>GoMan</td>
+			</tr>
+			<tr>
+				<td>RokuMan</td>
+			</tr>
+			<tr>
+				<td>NanaMan</td>
+			</tr>
+			<tr>
+				<td>HachiMan</td>
+			</tr>
+			<tr>
+				<td>KyuuMan</td>
+			</tr>
+			</table>
+			<!--------------------------------------DIALOGOS-SUGESTOES----------------------------------->
+			<h1>Diálogos e Sugestões</h1>
+			<h1>Diálogo 1</h1>
+			<p>A. Sugestão: 高いですか。	Resposta: いえ、安いですよ。</p>
+			<p>Sugestão: 安いですか。	Response: いえ、高いでよ。</p>
+			<ol>
+				<li>古いですか。</li>
+				<li>大きいですか。</li>
+				<li>新しいですか。</li>
+				<li>多いですか。</li>
+			</ol>
+			<p>B. Sugestão: いいですか。	Resposta: いいえ、あまりよくないです。</p>*
+			<p>Sugestão: 安いですか。  Resposta: いいえ、あまり安くないです。</p>
+			<ol>
+				<li>高いですか。</li>
+				<li>いいですか。</li>
+				<li>古いですか。</li>
+				<li>小さいですか。</li>
+				<li>少ないですか。</li>
+			</ol>
+			<p>C. Sugestão: アパートですか。	Resposta: いいえ、アパートじゃありません。</p>
+			<p>Sugestão: 安いですか。	       Resposta: いいえ、安くありません。</p>
+			<ol>
+				<li>いいですか。</li>
+				<li>留学生ですか。</li>
+				<li>新しいですか。</li>
+				<li>多いですか。</li>
+				<li>四時ですか。</li>
+				<li>新しい教科書ですか。</li>
+				<li>大きい学校</li>
+			</ol>
+			<p>D. *Sugestão: あれ、高かったですか。 Resposta: いえ、高くなかったですよ。</p>
+			<p>Sugestão: あれ、新しかったですか。 Resposta: いえ、新しくなかったですよ。</p>
+			<ol>
+				<li>あれ、古かったですか．</li>
+				<li>あれ、少なかったですか．</li>
+				<li>あれ、よかったですか．</li>
+				<li>あれ、熱かったですか．</li>
+				<li>あれ、小さかったですか。</li>
+				<li>あれ、安かったですか．</li>
+			</ol>
+				<h1>Diálogo 2</h1>
+				<p>A. Sugestão: 五円ですか。	Resposta: いえいえ、五十円ですよ。</p>
+				<p>Sugestão: 二百円ですか。	Resposta: いえいえ、二千円ですよ。</p>
+				<ol>	
+					<li>三十円ですか。</li>
+					<li>七千円ですか。</li>
+					<li>一万円ですか。</li>
+					<li>八百円ですか。</li>
+					<li>九十万円ですか。</li>
+					<li>六万円ですか。</li>
+				</ol>
+				<p>B.  Sugestão: 高いですねえ。 Resposta: ええ、もっと安いのはありませんかねえ。</p>
+				<p>Sugestão: 小さいですねえ。Resposta: ええ、もっと大きいのはありませんかねえ。</p>
+				<ol>
+					<li>古いですねえ。</li>
+					<li>大きいですねえ。</li>
+					<li>悪いですねえ。</li>
+					<li>むずかしいですねえ。</li>
+				</ol>
+				<p>C.  Sugestão: みんな、大きいですねえ。Resposta: 一番大きいのは、どれですか。</p>
+				<p>Sugestão: みんな、古いですねえ	Resposta: 一番古いのはどれですか。</p>
+				<ol>
+					<li>みんな、新しいですねえ。</li>
+					<li>みんな、むずかしいですねえ。</li>
+					<li>みんな、やさしいですねえ。</li>
+					<li>みんな、安いですねえ。</li>
+					<li>みんな、いいですねえ。</li>
+				</ol>
+				<h1>Diálogo 3</h1>
+				<p>A. Sugestão: きれいですか。Resposta: ええ、すごくきれいなアパートですよ。</p>
+				<p>Sugestão: 高いですか。	Resposta: ええ、すごく高いアパートですよ。</p>
+				<ol>
+					<li>便利ですか。</li>
+					<li>新しいですか。</li>
+					<li>大きいですか。</li>
+					<li>きたないですか。</li>
+					<li>不便ですか。</li>
+				</ol>
+				<p>B. Sugestão: きれいですか。	Resposta: いや、きれいじゃないですよ。</p>
+				<p>Sugestão: 遠いですか。	       Resposta: いや、遠くないですよ。</p>
+				<ol>			
+					<li>マンションですか。</li>
+					<li>近いですか。</li>
+					<li>きたないですか。</li>
+					<li>いい大学ですか。</li>
+					<li>きれいな英語ですか。</li>
+				</ol>
+				<h1>Diálogo 4</h1>
+				<p>A. Sugestão: いすとか机、ありますか。	Resposta: はい、いすも机もあります。</p>
+				<p>Sugestão: ケータイとかスマホ、だめですか。</p>
+				<p>Resposta: はい、ケータイもスマホもだめです。</p>
+				<ol>
+					<li>雨とか雪、すごいですか。</li>
+					<li>五番とか六番、安いですか。</li>
+					<li>アパートとかマンション、見ますか。</li>
+					<li>宿題とか試験、多いですか。</li>
+					<li>洗濯機とか、冷蔵庫、買いますか。</li>
+				</ol>
+				<p>B.  Sugestão: いすや机、ありますか。Resposta: いえ、いすも机もありません．</p>
+				<p>Sugestão: 英語やスペイン語、分かりますか。</p>
+				<p>Resposta: いえ、英語もスペイン語も分かりません。</p>
+				<ol>
+					<li>ペンや鉛筆、いりますか。</li>
+					<li>中国人や韓国人、来ますか。</li>
+					<li>マンガやアニメ、少ないですか。</li>
+					<li>4テーブルやベッド、きれいですか。</li>
+					<li>5会社や学校、近いですか。</li>
+				</ol>
+		</article>
+	</body>
+</html>
+
